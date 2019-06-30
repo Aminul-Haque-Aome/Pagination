@@ -11,6 +11,6 @@
         android:id="@+id/userListFragment"
         android:name="com.remotearth.fake_coder.pagination.screens.fragments.UserListFragment"
         android:label="user_list_fragment"
-        tools:layout="@layout/user_list_fragment"/>
+        tools:layout="@layout/fragment_user_list"/>
 
 </navigation>
