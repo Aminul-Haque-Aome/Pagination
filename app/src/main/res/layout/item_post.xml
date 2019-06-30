@@ -59,8 +59,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:text="@{post.body}"
             android:textColor="@color/colorAccent"
@@ -70,7 +68,20 @@
             app:layout_constraintTop_toBottomOf="@+id/textView_id"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintVertical_bias="1.0"
-            tools:text="Android architecture components are a collection of libraries that help you design robust, testable, and maintainable apps"/>
+            tools:text="Android architecture components are a collection of libraries that help you design robust, testable, and maintainable apps"
+            android:id="@+id/appCompatTextView"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey"
+            android:layerType="software"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView"
+            app:layout_constraintTop_toBottomOf="parent"
+            android:layout_marginStart="8dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

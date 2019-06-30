@@ -10,28 +10,25 @@ import java.util.concurrent.TimeUnit
 
 class APIClient {
 
-    private var retrofit: Retrofit? = null
+    companion object Factory {
 
-    private fun getClient(): Retrofit {
-        val interceptor = HttpLoggingInterceptor()
+        fun getClient(): Retrofit {
+            val client = OkHttpClient.Builder()
+                .connectTimeout(3, TimeUnit.MINUTES)
+                .writeTimeout(3, TimeUnit.MINUTES)
+                .readTimeout(3, TimeUnit.MINUTES)
+                .addInterceptor(HttpLoggingInterceptor())
+                .build()
 
-        val client = OkHttpClient.Builder()
-            .connectTimeout(3, TimeUnit.MINUTES)
-            .writeTimeout(3, TimeUnit.MINUTES)
-            .readTimeout(3, TimeUnit.MINUTES)
-            .addInterceptor(interceptor).build()
-
-        if (null == retrofit) {
-            retrofit = Retrofit.Builder()
+            return Retrofit.Builder()
                 .baseUrl(Constant.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)
                 .build()
         }
-        return retrofit!!
     }
 
-    fun getAPIService() = getClient().create(APIService::class.java)
+    fun getAPIService(): APIService = getClient().create(APIService::class.java)
 
 }

@@ -1,4 +1,4 @@
-package com.remotearth.fake_coder.pagination.contracts
+package com.remotearth.fake_coder.pagination.contracts.base
 
 interface BaseView {
     fun isInternetAvailable(): Boolean?
