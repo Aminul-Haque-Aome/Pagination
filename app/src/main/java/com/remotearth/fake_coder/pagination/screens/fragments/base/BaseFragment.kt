@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.remotearth.fake_coder.pagination.R
-import com.remotearth.fake_coder.pagination.contracts.BaseView
+import com.remotearth.fake_coder.pagination.contracts.base.BaseView
 import com.remotearth.fake_coder.pagination.utils.ConnectivityUtil
 import com.remotearth.fake_coder.pagination.utils.ProgressUtil
 
